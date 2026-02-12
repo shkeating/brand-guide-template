@@ -57,4 +57,25 @@
                 observer.observe(section);
             }
         });
+
+    // --- Mobile TOC Toggle ---
+    const tocToggle = document.getElementById('mobile-toc-toggle');
+    const tocNav = document.querySelector('.toc-nav');
+
+    if (tocToggle && tocNav) {
+                tocToggle.addEventListener('click', () => {
+            const isExpanded = tocToggle.getAttribute('aria-expanded') === 'true';
+            tocToggle.setAttribute('aria-expanded', !isExpanded);
+            tocNav.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked on mobile
+        tocNav.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A' && window.innerWidth < 1000) {
+                tocNav.classList.remove('open');
+                tocToggle.setAttribute('aria-expanded', 'false');
+            }
+
+        });
+    }
     });

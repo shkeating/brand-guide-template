@@ -3,7 +3,7 @@ import ColorRow from '../ColorRow.astro';
 import InstructionNote from '../InstructionNote.astro';
 ---
 <section id="color">
-                <h2>3. Color Palette & Contrast Standards</h2>
+                <h2>3. Colors</h2>
                 
                 <InstructionNote>
                     Define your brand's primary and extended color palettes. Research and document the required WCAG contrast ratios for text and non-text UI elements, then verify your palette meets these standards.
@@ -14,6 +14,7 @@ import InstructionNote from '../InstructionNote.astro';
 
                 <h3>Text Contrast Matrix</h3>
                 <p>[Define the minimum contrast ratio required for normal text vs. large text according to your chosen WCAG compliance level.]</p>
+                <div class="table-responsive">
                 <table>
                     <thead>
                         <tr>
@@ -35,6 +36,7 @@ import InstructionNote from '../InstructionNote.astro';
                         <!-- Students add extended web palette rows here -->
                     </tbody>
                 </table>
+                </div>
 
                 <h3>Non-Text Contrast (UI Elements)</h3>
                 <p>[Define the minimum contrast ratio required for interactive components like buttons, input borders, and icons against their adjacent backgrounds.]</p>

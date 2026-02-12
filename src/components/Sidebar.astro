@@ -2,20 +2,16 @@
 ---
 <aside class="sidebar">
     <header class="sidebar-header">
-        <div class="placeholder-box logo-placeholder">
-            [Brand Logo Image Placeholder]
+        <div class="brand">
+            <div class="placeholder-box logo-placeholder">
+                [Brand Logo Image Placeholder]
+            </div>
+            <h1 class="brand-title">Brand Guide</h1>
         </div>
-        
-        <h1 class="brand-title">[Brand Name] Inclusive Brand Guide</h1>
-        <p class="brand-author">Prepared by: [Student Name]</p>
 
-        <div class="theme-toggle">
-            <label class="switch">
-                <input type="checkbox" id="theme-switch" aria-label="Toggle Dark Mode">
-                <span class="slider"></span>
-            </label>
-            <span class="toggle-label">Dark Mode</span>
-        </div>
+    <button id="mobile-toc-toggle" class="mobile-toc-toggle" aria-label="Toggle Table of Contents" aria-expanded="false">
+        &#8942;
+    </button>
     </header>
 
     <nav class="toc-nav" aria-label="Table of Contents">
@@ -25,29 +21,3 @@
         </ul>
     </nav>
 </aside>
-
-<script>
-    const toggleSwitch = document.querySelector('#theme-switch') as HTMLInputElement;
-    const currentTheme = localStorage.getItem('theme');
-
-    // Check for saved user preference, if any, on load
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        if (currentTheme === 'dark') {
-            toggleSwitch.checked = true;
-        }
-    }
-
-    function switchTheme(e: Event) {
-        const target = e.target as HTMLInputElement;
-        if (target.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-        }    
-    }
-
-    toggleSwitch?.addEventListener('change', switchTheme, false);
-</script>
