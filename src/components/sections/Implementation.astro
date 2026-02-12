@@ -1,12 +1,15 @@
 
+---
+import ChecklistItem from '../ChecklistItem.astro';
+import InstructionNote from '../InstructionNote.astro';
+---
             <!-- Section 7: Documentation -->
             <section id="implementation">
                 <h2>7. Documentation & Implementation</h2>
                 
-                <div class="instruction-note">
-                    <strong>Student Instructions</strong>
+                <InstructionNote>
                     List the testing tools your team will use to verify accessibility. Then, construct a pre-flight audit checklist containing the minimum standards an asset must pass before publication, based on the rules you defined above.
-                </div>
+                </InstructionNote>
 
                 <h3>Approved Accessibility Tools</h3>
                 <ul>
@@ -18,12 +21,12 @@
                 <h3>Pre-Flight Audit Checklist</h3>
                 <p>Before publishing any digital asset for [Brand Name], designers and content creators must verify the following:</p>
                 <ul class="checklist">
-                    <li><input type="checkbox" id="audit1"> <label for="audit1">[Checklist Item 1: Relate to your text contrast rules]</label></li>
-                    <li><input type="checkbox" id="audit2"> <label for="audit2">[Checklist Item 2: Relate to your UI contrast rules]</label></li>
-                    <li><input type="checkbox" id="audit3"> <label for="audit3">[Checklist Item 3: Relate to your alt-text rules]</label></li>
-                    <li><input type="checkbox" id="audit4"> <label for="audit4">[Checklist Item 4: Relate to your color usage rules]</label></li>
-                    <li><input type="checkbox" id="audit5"> <label for="audit5">[Checklist Item 5: Relate to your multimedia rules]</label></li>
-                    <li><input type="checkbox" id="audit6"> <label for="audit6">[Checklist Item 6: Relate to your structure/UX rules]</label></li>
-                    <li><input type="checkbox" id="audit7"> <label for="audit7">[Checklist Item 7: Relate to your content/voice rules]</label></li>
+        <ChecklistItem id="audit1" label="[Checklist Item 1: Relate to your text contrast rules]" />
+        <ChecklistItem id="audit2" label="[Checklist Item 2: Relate to your UI contrast rules]" />
+        <ChecklistItem id="audit3" label="[Checklist Item 3: Relate to your alt-text rules]" />
+        <ChecklistItem id="audit4" label="[Checklist Item 4: Relate to your color usage rules]" />
+        <ChecklistItem id="audit5" label="[Checklist Item 5: Relate to your multimedia rules]" />
+        <ChecklistItem id="audit6" label="[Checklist Item 6: Relate to your structure/UX rules]" />
+        <ChecklistItem id="audit7" label="[Checklist Item 7: Relate to your content/voice rules]" />
                 </ul>
             </section>

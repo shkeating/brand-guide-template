@@ -1,10 +1,13 @@
+---
+import ColorRow from '../ColorRow.astro';
+import InstructionNote from '../InstructionNote.astro';
+---
 <section id="color">
                 <h2>3. Color Palette & Contrast Standards</h2>
                 
-                <div class="instruction-note">
-                    <strong>Student Instructions</strong>
+                <InstructionNote>
                     Define your brand's primary and extended color palettes. Research and document the required WCAG contrast ratios for text and non-text UI elements, then verify your palette meets these standards.
-                </div>
+                </InstructionNote>
 
                 <h3>Color Usage Policy</h3>
                 <p><strong>Use of Color:</strong> [Define your brand's policy on relying solely on color to convey meaning, state, or information (e.g., in error states or links).]</p>
@@ -21,12 +24,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><span class="color-swatch" style="background-color: #ffffff;"></span> [Hex Code / Name]</td>
-                            <td><span class="color-swatch" style="background-color: #333333;"></span> [Hex Code / Name]</td>
-                            <td>[e.g., Ratio]</td>
-                            <td>[e.g., Level]</td>
-                        </tr>
+            <ColorRow 
+                bgColor="#ffffff" 
+                bgName="[Hex Code / Name]" 
+                textColor="#333333" 
+                textName="[Hex Code / Name]" 
+                ratio="[e.g., Ratio]" 
+                level="[e.g., Level]" 
+            />
                         <!-- Students add extended web palette rows here -->
                     </tbody>
                 </table>

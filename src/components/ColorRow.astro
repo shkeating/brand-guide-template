@@ -1,0 +1,17 @@
+---
+interface Props {
+  bgColor: string;
+  bgName: string;
+  textColor: string;
+  textName: string;
+  ratio: string;
+  level: string;
+}
+const { bgColor, bgName, textColor, textName, ratio, level } = Astro.props;
+---
+<tr>
+    <td><span class="color-swatch" style={`background-color: ${bgColor};`}></span> {bgName}</td>
+    <td><span class="color-swatch" style={`background-color: ${textColor};`}></span> {textName}</td>
+    <td>{ratio}</td>
+    <td>{level}</td>
+</tr>
