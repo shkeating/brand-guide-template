@@ -1,0 +1,283 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+---
+
+<Layout title="[Brand Name] - Inclusive Brand Guide">
+    <!-- Sidebar / Table of Contents -->
+    <Sidebar />
+
+    <div class="container">
+        <!-- Accessibility Skip Link -->
+        <a href="#main-content" style="position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;" onfocus="this.style.position='static'; this.style.width='auto'; this.style.height='auto';">Skip to main content</a>
+
+        <main id="main-content">
+
+            <!-- Section 1: Strategy -->
+            <section id="strategy">
+                <h2>1. Brand Strategy & Audience</h2>
+                
+                <div class="instruction-note">
+                    <strong>Student Instructions</strong>
+                    Write a brief paragraph defining your brand's mission through an inclusive lens. Explicitly state who your core audience is, and document specific accessibility considerations for different user groups.
+                </div>
+
+                <h3>Inclusive Mission Statement</h3>
+                <p>[Insert your inclusive mission statement here.]</p>
+
+                <h3>Audience Considerations</h3>
+                <ul>
+                    <li>[User Group Consideration 1: Detail the specific accessibility needs for this group]</li>
+                    <li>[User Group Consideration 2: Detail the specific accessibility needs for this group]</li>
+                    <li>[User Group Consideration 3: Detail the specific accessibility needs for this group]</li>
+                </ul>
+            </section>
+
+            <!-- Section 2: Typography -->
+            <section id="typography">
+                <h2>2. Typography & Readability</h2>
+                
+                <div class="instruction-note">
+                    <strong>Student Instructions</strong>
+                    Update the CSS of this page to reflect your chosen fonts. Define your accessibility rules for sizing, line height, text alignment, and capitalization based on WCAG readability guidelines.
+                </div>
+
+                <h3>Typeface Selection</h3>
+                <p><strong>Primary Typeface:</strong> [Insert Sans-Serif Font Name]</p>
+                <p><strong>Secondary Typeface:</strong> [Insert Font Name]</p>
+                
+                <h3>Alignment & Formatting Rules</h3>
+                <ul>
+                    <li><strong>Alignment:</strong> [Define your rules regarding text alignment and justification for readability]</li>
+                    <li><strong>Line Spacing:</strong> [Define the minimum line spacing (leading) allowed for body text]</li>
+                    <li><strong>Capitalization:</strong> [Define your rules regarding the use of ALL CAPS text]</li>
+                </ul>
+
+                <h3>Hierarchy Preview</h3>
+                <div class="type-preview">
+                    <h1>Heading 1 (H1) - [Insert Size/Weight]</h1>
+                    <h2>Heading 2 (H2) - [Insert Size/Weight]</h2>
+                    <h3>Heading 3 (H3) - [Insert Size/Weight]</h3>
+                    <p>Body Paragraph - [Insert Size/Weight]. This demonstrates how the standard reading text will look. [State your minimum body text size requirement here].</p>
+                </div>
+            </section>
+
+            <!-- Section 3: Color & Contrast -->
+            <section id="color">
+                <h2>3. Color Palette & Contrast Standards</h2>
+                
+                <div class="instruction-note">
+                    <strong>Student Instructions</strong>
+                    Define your brand's primary and extended color palettes. Research and document the required WCAG contrast ratios for text and non-text UI elements, then verify your palette meets these standards.
+                </div>
+
+                <h3>Color Usage Policy</h3>
+                <p><strong>Use of Color:</strong> [Define your brand's policy on relying solely on color to convey meaning, state, or information (e.g., in error states or links).]</p>
+
+                <h3>Text Contrast Matrix</h3>
+                <p>[Define the minimum contrast ratio required for normal text vs. large text according to your chosen WCAG compliance level.]</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Background Color</th>
+                            <th scope="col">Text Color</th>
+                            <th scope="col">Contrast Ratio</th>
+                            <th scope="col">WCAG Level (Pass/Fail)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="color-swatch" style="background-color: #ffffff;"></span> [Hex Code / Name]</td>
+                            <td><span class="color-swatch" style="background-color: #333333;"></span> [Hex Code / Name]</td>
+                            <td>[e.g., Ratio]</td>
+                            <td>[e.g., Level]</td>
+                        </tr>
+                        <!-- Students add extended web palette rows here -->
+                    </tbody>
+                </table>
+
+                <h3>Non-Text Contrast (UI Elements)</h3>
+                <p>[Define the minimum contrast ratio required for interactive components like buttons, input borders, and icons against their adjacent backgrounds.]</p>
+            </section>
+
+            <!-- Section 4: Imagery -->
+            <section id="imagery">
+                <h2>4. Imagery & Multimedia Standards</h2>
+                
+                <div class="instruction-note">
+                    <strong>Student Instructions</strong>
+                    Define your brand's specific rules for handling multimedia accessibility, including policies on embedded text, video captions, and motion design. Provide alt-text examples for your visual assets.
+                </div>
+
+                <h3>Multimedia Policies</h3>
+                <ul>
+                    <li><strong>Text in Images:</strong> [Define your policy regarding text embedded directly into images vs. rendered in code]</li>
+                    <li><strong>Video & Audio:</strong> [Define your accessibility requirements for video captions and audio transcripts]</li>
+                    <li><strong>Motion Control:</strong> [Define your rules and restrictions for flashing, blinking, or auto-playing content]</li>
+                </ul>
+
+                <h3>Alt-Text Style Guide</h3>
+                <div class="image-grid">
+                    <div>
+                        <div class="placeholder-box" style="min-height: 200px;">
+                            [Image 1 Placeholder]
+                        </div>
+                        <p><strong>Alt-Text:</strong> "[Write descriptive alt text here for a complex/functional image]"</p>
+                    </div>
+                    <div>
+                        <div class="placeholder-box" style="min-height: 200px;">
+                            [Image 2 Placeholder]
+                        </div>
+                        <p><strong>Alt-Text:</strong> "[Write descriptive alt text here for a decorative/ambient image]"</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Digital UX -->
+            <section id="ux-content">
+                <h2>5. Digital UX & Content Design</h2>
+                
+                <div class="instruction-note">
+                    <strong>Student Instructions</strong>
+                    Define the structural rules for how interactive elements and digital content should be designed to support assistive technologies.
+                </div>
+
+                <h3>Interactive Elements</h3>
+                <ul>
+                    <li><strong>Descriptive Links:</strong> [Define your rules for writing clear, accessible link text and what practices to avoid]</li>
+                    <li><strong>Touch Targets:</strong> [Define the minimum clickable area dimensions for interactive UI elements]</li>
+                    <li><strong>Form Labels:</strong> [Define your policy on form labeling, including the use of placeholder text vs. persistent labels]</li>
+                    <li><strong>Heading Structure:</strong> [Define your rules for using semantic heading tags (H1-H6) to structure content]</li>
+                </ul>
+            </section>
+
+            <!-- Section 6: Voice & Tone -->
+            <section id="voice">
+                <h2>6. Tone of Voice & Language</h2>
+                
+                <div class="instruction-note">
+                    <strong>Student Instructions</strong>
+                    Define the reading level and communication style of your brand. Create a "Do / Don't" list for plain language, and set structural rules for formatting social media.
+                </div>
+
+                <h3>Plain Language Guidelines</h3>
+                <p>[Describe the target reading level and general tone of the brand. Provide guidelines on jargon, complex sentence structures, etc.]</p>
+
+                <h3>Social Media Accessibility</h3>
+                <p><strong>Hashtags & Emojis:</strong> [Define your rules for formatting hashtags (e.g., casing) and the appropriate usage of emojis for screen readers.]</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Do Say (Inclusive/Plain)</th>
+                            <th scope="col">Don't Say (Exclusionary/Idiom)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>[Insert Example]</td>
+                            <td>[Insert Example]</td>
+                        </tr>
+                        <tr>
+                            <td>[Insert Example]</td>
+                            <td>[Insert Example]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Section 7: Documentation -->
+            <section id="implementation">
+                <h2>7. Documentation & Implementation</h2>
+                
+                <div class="instruction-note">
+                    <strong>Student Instructions</strong>
+                    List the testing tools your team will use to verify accessibility. Then, construct a pre-flight audit checklist containing the minimum standards an asset must pass before publication, based on the rules you defined above.
+                </div>
+
+                <h3>Approved Accessibility Tools</h3>
+                <ul>
+                    <li>[Tool 1: e.g., Contrast Checker]</li>
+                    <li>[Tool 2: e.g., Evaluation Tool]</li>
+                    <li>[Tool 3: e.g., Screen Reader]</li>
+                </ul>
+
+                <h3>Pre-Flight Audit Checklist</h3>
+                <p>Before publishing any digital asset for [Brand Name], designers and content creators must verify the following:</p>
+                <ul class="checklist">
+                    <li><input type="checkbox" id="audit1"> <label for="audit1">[Checklist Item 1: Relate to your text contrast rules]</label></li>
+                    <li><input type="checkbox" id="audit2"> <label for="audit2">[Checklist Item 2: Relate to your UI contrast rules]</label></li>
+                    <li><input type="checkbox" id="audit3"> <label for="audit3">[Checklist Item 3: Relate to your alt-text rules]</label></li>
+                    <li><input type="checkbox" id="audit4"> <label for="audit4">[Checklist Item 4: Relate to your color usage rules]</label></li>
+                    <li><input type="checkbox" id="audit5"> <label for="audit5">[Checklist Item 5: Relate to your multimedia rules]</label></li>
+                    <li><input type="checkbox" id="audit6"> <label for="audit6">[Checklist Item 6: Relate to your structure/UX rules]</label></li>
+                    <li><input type="checkbox" id="audit7"> <label for="audit7">[Checklist Item 7: Relate to your content/voice rules]</label></li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+</Layout>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const tocList = document.getElementById("toc-list");
+        // Only select h2 elements that are direct children of a section to avoid the h2 in the type-preview
+        const headings = document.querySelectorAll("main section > h2");
+        const sections = document.querySelectorAll("main section");
+
+        headings.forEach((heading, index) => {
+            // Determine the ID to link to. Use parent section's ID if available, otherwise generate one.
+            let targetId = heading.parentElement.tagName.toLowerCase() === 'section' && heading.parentElement.id 
+                            ? heading.parentElement.id 
+                            : heading.id;
+                            
+            if (!targetId) {
+                targetId = 'heading-' + index;
+                heading.id = targetId;
+            }
+
+            // Create list item and link
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = "#" + targetId;
+            a.textContent = heading.textContent;
+            
+            li.appendChild(a);
+            tocList.appendChild(li);
+        });
+
+        // --- Scrollspy Implementation ---
+        const tocLinks = document.querySelectorAll('.toc-nav a');
+        
+        // Observer options: defines a detection window in the upper portion of the viewport
+        const observerOptions = {
+            root: null,
+            rootMargin: '-10% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // When a section enters the detection window
+                if (entry.isIntersecting) {
+                    // Remove active class from all links
+                    tocLinks.forEach(link => link.classList.remove('active'));
+                    
+                    // Add active class to the corresponding TOC link
+                    const activeLink = document.querySelector(`.toc-nav a[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scrolling
+        sections.forEach(section => {
+            if (section.id) {
+                observer.observe(section);
+            }
+        });
+    });
+</script>
