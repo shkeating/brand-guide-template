@@ -1,11 +1,18 @@
 ---
 import '../styles/global.css';
+import { brandSettings } from '../scripts/brandSettings.js';
 
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+
+// Generate CSS variables from brand settings
+const paletteVars = brandSettings.palette.map(color => {
+    const slug = color.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    return `--color-${slug}: ${color.hex};`;
+}).join('\n\t\t\t');
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +20,14 @@ const { title } = Astro.props;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
+    <style is:global>
+        :root {
+            {paletteVars}
+            --font-primary: {brandSettings.typography.primaryFont};
+            --font-secondary: {brandSettings.typography.secondaryFont};
+            --line-height-base: {brandSettings.typography.lineHeight};
+        }
+    </style>
 </head>
 <body>
     <slot />
