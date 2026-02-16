@@ -10,7 +10,7 @@ import InstructionNote from '../InstructionNote.astro';
                 </InstructionNote>
 
                 <h3>Color Usage Policy</h3>
-                <p><strong>Use of Color:</strong> [Define your brand's policy on relying solely on color to convey meaning, state, or information (e.g., in error states or links).]</p>
+                <p><strong>Use of Color:</strong> [Define your brand's policy on relying solely on color to convey meaning, state, or information (e.g., in error states or links). Assume your user is marketing and design team membrs who might not have any prior accessibility knowledge.]</p>
 
                 <h3>Text Contrast Matrix</h3>
                 <p>[Define the minimum contrast ratio required for normal text vs. large text according to your chosen WCAG compliance level.]</p>
@@ -36,6 +36,19 @@ import InstructionNote from '../InstructionNote.astro';
                         <!-- Students add extended web palette rows here -->
                     </tbody>
                 </table>
+                </div>
+
+                <h3>Negative Examples</h3>
+                <p>The following examples illustrate color combinations that fail WCAG AA compliance due to insufficient contrast.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                    <div style="background-color: #ffffff; color: #cccccc; padding: 1.5rem; border: 1px solid #e0e0e0;">
+                        <h4 style="margin-top: 0; color: inherit;">Do Not Use</h4>
+                        <p style="margin-bottom: 0;">Light gray text on white background (Fails WCAG AA)</p>
+                    </div>
+                    <div style="background-color: #333333; color: #000000; padding: 1.5rem; border: 1px solid #e0e0e0;">
+                        <h4 style="margin-top: 0; color: inherit;">Do Not Use</h4>
+                        <p style="margin-bottom: 0;">Black text on dark gray background (Poor visibility)</p>
+                    </div>
                 </div>
 
                 <h3>Non-Text Contrast (UI Elements)</h3>
