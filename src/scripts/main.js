@@ -136,4 +136,99 @@
             }
         }
     });
+
+    // --- Contrast Calculator Logic ---
+    const contrastCalculator = document.getElementById('contrast-calculator');
+    if (contrastCalculator) {
+        // Define Brand Palette (Students should update this)
+        // Retrieve palette from data attribute populated by brandSettings.js
+        const brandPalette = JSON.parse(contrastCalculator.dataset.palette || '[]');
+
+        function getLuminance(hex) {
+            const rgb = parseInt(hex.slice(1), 16);
+            const r = (rgb >> 16) & 0xff;
+            const g = (rgb >>  8) & 0xff;
+            const b = (rgb >>  0) & 0xff;
+            
+            const [lr, lg, lb] = [r, g, b].map(c => {
+                c /= 255;
+                return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+            });
+            return 0.2126 * lr + 0.7152 * lg + 0.0722 * lb;
+        }
+
+        function getContrastRatio(hex1, hex2) {
+            const lum1 = getLuminance(hex1);
+            const lum2 = getLuminance(hex2);
+            const brightest = Math.max(lum1, lum2);
+            const darkest = Math.min(lum1, lum2);
+            return (brightest + 0.05) / (darkest + 0.05);
+        }
+
+        function updateCalculator() {
+            const bgSelect = document.getElementById('bg-color');
+            const textSelect = document.getElementById('text-color');
+            const bgHex = bgSelect.value;
+            const textHex = textSelect.value;
+
+            // Update Preview
+            const preview = document.getElementById('preview-area');
+            if (preview) {
+                preview.style.backgroundColor = bgHex;
+                preview.style.color = textHex;
+            }
+
+            // Calculate Ratio
+            const ratio = getContrastRatio(bgHex, textHex);
+            const ratioDisplay = document.getElementById('ratio-display');
+            if (ratioDisplay) ratioDisplay.textContent = ratio.toFixed(2) + ":1";
+
+            // Update Table
+            const setStatus = (id, pass) => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.textContent = pass ? "PASS" : "FAIL";
+                    el.className = pass ? "status-pass" : "status-fail";
+                }
+            };
+
+            setStatus('aa-normal', ratio >= 4.5);
+            setStatus('aa-large', ratio >= 3);
+            setStatus('aaa-normal', ratio >= 7);
+            setStatus('aaa-large', ratio >= 4.5);
+        }
+
+        // Initialize
+        const bgSelect = document.getElementById('bg-color');
+        const textSelect = document.getElementById('text-color');
+
+        if (bgSelect && textSelect) {
+            brandPalette.forEach(color => {
+                const option = new Option(`${color.name} (${color.hex})`, color.hex);
+                bgSelect.add(option.cloneNode(true));
+                textSelect.add(option);
+            });
+
+            // Set defaults (White bg, Black text)
+            bgSelect.value = "#ffffff";
+            textSelect.value = "#000000";
+
+            bgSelect.addEventListener('change', updateCalculator);
+            textSelect.addEventListener('change', updateCalculator);
+
+            // Swap Colors
+            const swapBtn = document.getElementById('swap-colors');
+            if (swapBtn) {
+                swapBtn.addEventListener('click', () => {
+                    const temp = bgSelect.value;
+                    bgSelect.value = textSelect.value;
+                    textSelect.value = temp;
+                    updateCalculator();
+                });
+            }
+
+            // Initial run
+            updateCalculator();
+        }
+    }
     });

@@ -1,11 +1,16 @@
 ---
+import { brandSettings } from '../scripts/brandSettings.js';
 ---
 <aside class="sidebar">
     <header class="sidebar-header">
         <div class="brand">
-            <div class="placeholder-box logo-placeholder">
-                [Brand Logo Image Placeholder]
-            </div>
+            {brandSettings.logo.src ? (
+                <img src={brandSettings.logo.src} alt={brandSettings.logo.alt} style="max-width: 150px; height: auto; margin-bottom: 1rem;" />
+            ) : (
+                <div class="placeholder-box logo-placeholder">
+                    [Brand Logo Image Placeholder]
+                </div>
+            )}
             <h1 class="brand-title">Brand Guide</h1>
         </div>
 

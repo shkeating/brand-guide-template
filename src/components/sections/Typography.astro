@@ -1,3 +1,6 @@
+---
+import { brandSettings } from '../../scripts/brandSettings.js';
+---
 <section id="typography">
                 <h2>2. Typography</h2>
                 
@@ -7,13 +10,13 @@
                 </div>
 
                 <h3>Typeface Selection</h3>
-                <p><strong>Primary Typeface:</strong> [Insert Sans-Serif Font Name]</p>
-                <p><strong>Secondary Typeface:</strong> [Insert Font Name]</p>
+                <p><strong>Primary Typeface:</strong> {brandSettings.typography.primaryFont}</p>
+                <p><strong>Secondary Typeface:</strong> {brandSettings.typography.secondaryFont}</p>
                 
                 <h3>Readability Standards</h3>
                 <ul>
-                    <li><strong>Line Height:</strong> Body text must have a line height of at [least ##] to ensure readability.</li>
-                    <li><strong>Paragraph Spacing:</strong> Spacing between paragraphs must be at least [## times] the font size.</li>
+                    <li><strong>Line Height:</strong> Body text must have a line height of at least {brandSettings.typography.lineHeight} to ensure readability.</li>
+                    <li><strong>Paragraph Spacing:</strong> Spacing between paragraphs must be at least {brandSettings.typography.paragraphSpacing} times the font size.</li>
                     <li><strong>Alignment:</strong> [Define your rules regarding text alignment and justification for readability]</li>
                     <li><strong>Capitalization:</strong> [Define your rules regarding the use of ALL CAPS text]</li>
                 </ul>

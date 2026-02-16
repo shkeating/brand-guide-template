@@ -1,6 +1,6 @@
 ---
-import ColorRow from '../ColorRow.astro';
 import InstructionNote from '../InstructionNote.astro';
+import { brandSettings } from '../../scripts/brandSettings.js';
 ---
 <section id="color">
                 <h2>3. Colors</h2>
@@ -12,30 +12,58 @@ import InstructionNote from '../InstructionNote.astro';
                 <h3>Color Usage Policy</h3>
                 <p><strong>Use of Color:</strong> [Define your brand's policy on relying solely on color to convey meaning, state, or information (e.g., in error states or links). Assume your user is marketing and design team membrs who might not have any prior accessibility knowledge.]</p>
 
-                <h3>Text Contrast Matrix</h3>
-                <p>[Define the minimum contrast ratio required for normal text vs. large text according to your chosen WCAG compliance level.]</p>
-                <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">Background Color</th>
-                            <th scope="col">Text Color</th>
-                            <th scope="col">Contrast Ratio</th>
-                            <th scope="col">WCAG Level (Pass/Fail)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            <ColorRow 
-                bgColor="#ffffff" 
-                bgName="[Hex Code / Name]" 
-                textColor="#333333" 
-                textName="[Hex Code / Name]" 
-                ratio="[e.g., Ratio]" 
-                level="[e.g., Level]" 
-            />
-                        <!-- Students add extended web palette rows here -->
-                    </tbody>
-                </table>
+                <h3>Text Contrast Playground</h3>
+                <p>[Define the minimum contrast ratio required for normal text vs. large text according to WCAG 2.1 AA, explain to users what the tool below helps them do and how they can use it]</p>
+                
+                <div id="contrast-calculator" class="contrast-calculator" data-palette={JSON.stringify(brandSettings.palette)}>
+                    <div class="calculator-controls">
+                        <div class="control-group">
+                            <label for="bg-color">Background Color</label>
+                            <select id="bg-color">
+                                <!-- Populated by JS -->
+                            </select>
+                        </div>
+                        <button id="swap-colors" class="swap-btn" aria-label="Swap background and text colors" title="Swap Colors">
+                            ⇄
+                        </button>
+                        <div class="control-group">
+                            <label for="text-color">Text Color</label>
+                            <select id="text-color">
+                                <!-- Populated by JS -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="preview-area" class="preview-area">
+                        <h4>Preview Text</h4>
+                        <p>The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+
+                    <div class="results">
+                        <p class="results-ratio"><strong>Contrast Ratio:</strong> <span id="ratio-display"></span></p>
+                        
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Standard</th>
+                                    <th>Normal Text</th>
+                                    <th>Large Text (18pt+ / 14pt bold)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>WCAG AA</strong></td>
+                                    <td id="aa-normal"></td>
+                                    <td id="aa-large"></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>WCAG AAA</strong></td>
+                                    <td id="aaa-normal"></td>
+                                    <td id="aaa-large"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <h3>Negative Examples</h3>

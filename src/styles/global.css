@@ -399,3 +399,90 @@ th {
         max-width: 900px;
     }
 }
+
+/* Contrast Calculator Component */
+.contrast-calculator {
+    background-color: var(--table-header-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    margin-bottom: 2rem;
+}
+
+.calculator-controls {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: end;
+}
+
+@media (min-width: 600px) {
+    .calculator-controls {
+        grid-template-columns: 1fr auto 1fr;
+    }
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.control-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+}
+
+.preview-area {
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.preview-area h4,
+.preview-area p {
+    margin: 0;
+    color: inherit;
+}
+
+.preview-area h4 {
+    font-size: 1.5rem;
+}
+
+.results-ratio {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.status-pass {
+    color: #198754; /* Success Green */
+    font-weight: bold;
+}
+
+.status-fail {
+    color: #dc3545; /* Danger Red */
+    font-weight: bold;
+}
+
+.swap-btn {
+    padding: 0.6rem 1rem;
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.swap-btn:hover {
+    background-color: var(--table-header-bg);
+}
