@@ -78,4 +78,62 @@
 
         });
     }
+
+    // --- Add Skip Back Links ---
+    // Create styles for the skip link to be visually hidden until focused
+    const skipLinkStyle = document.createElement('style');
+    skipLinkStyle.textContent = `
+        .skip-back-link {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .skip-back-link:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            clip: auto;
+            white-space: normal;
+            display: inline-block;
+            padding: 0.5rem;
+            background: #ffffff;
+            color: #000000;
+            border: 2px solid #000000;
+            margin-top: 1rem;
+            text-decoration: underline;
+            z-index: 100;
+        }
+    `;
+    document.head.appendChild(skipLinkStyle);
+
+    sections.forEach(section => {
+        const skipLink = document.createElement('a');
+        skipLink.href = '#site-navigation';
+        skipLink.className = 'skip-back-link';
+        skipLink.textContent = 'Skip back to navigation';
+        section.appendChild(skipLink);
+    });
+
+    // Accessibility: Move focus to target section when using keyboard navigation (Enter key)
+    document.addEventListener('click', (event) => {
+        const link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+
+        // Check for keyboard activation (detail is 0)
+        if (event.detail === 0) {
+            const id = link.getAttribute('href').substring(1);
+            const target = document.getElementById(id);
+
+            if (target) {
+                if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+                target.focus();
+            }
+        }
+    });
     });
