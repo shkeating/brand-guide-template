@@ -1,8 +1,8 @@
 export const brandSettings = {
     logo: {
-        src: "", // Add logo URL here (e.g., "/assets/logo.png")
-        alt: "[Brand Name] Logo",
-        variations: [
+        src: "", // Add logo image URL here (e.g., "/assets/logo.png")
+        alt: "[Brand Name]",
+        variations: [ // you might have wordmarks / different color variants than what is listed here, that's fine just adjust it
             { 
                 name: "Primary - Light Background", 
                 src: "", // Add image path
@@ -35,13 +35,13 @@ export const brandSettings = {
     },
     favicon: "/favicon.svg", // Add favicon URL here
     typography: {
-        primaryFont: "Helvetica Neue",
+        primaryFont: "Helvetica Neue", // dont be a bum, go find some google/adobe fonts you like. just make sure to load them in the stylesheet or Layout astro file 
         secondaryFont: "Verdana",
         baseSize: "16px",
         lineHeight: "1.5",
         paragraphSpacing: "2"
     },
-    palette: [
+    palette: [ // these will load automatically into your page into the color section
         { name: "White", hex: "#ffffff" },
         { name: "Black", hex: "#000000" },
         { name: "Primary Blue", hex: "#0056b3" },
