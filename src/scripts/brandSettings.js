@@ -35,8 +35,8 @@ export const brandSettings = {
     },
     favicon: "/favicon.svg", // Add favicon URL here
     typography: {
-        primaryFont: "Helvetica Neue", // dont be a bum, go find some google/adobe fonts you like. just make sure to load them in the stylesheet or Layout astro file 
-        secondaryFont: "Verdana",
+        primaryFont: "Helvetica Neue",  // this will automatically get set as the page font
+        secondaryFont: "Verdana", // dont be a bum, go find some google/adobe fonts you like. just make sure to load them in the stylesheet or Layout astro file 
         baseSize: "16px",
         lineHeight: "1.5",
         paragraphSpacing: "2"
