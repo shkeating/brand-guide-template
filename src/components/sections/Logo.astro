@@ -1,0 +1,75 @@
+---
+import { brandSettings } from '../../scripts/brandSettings.js';
+import InstructionNote from '../InstructionNote.astro';
+---
+<section id="logo">
+    <h2>Logo & Wordmark</h2>
+    
+    <InstructionNote>
+        Upload and document your logo variations here. Ensure you provide versions for light and dark backgrounds, as well as monochrome options for print or restricted color environments.
+    </InstructionNote>
+
+    <div class="logo-grid">
+        {brandSettings.logo.variations.map(variation => (
+            <div class="logo-card">
+                <div class="logo-preview" style={`background-color: ${variation.bg}; color: ${variation.darkText ? '#000' : '#fff'}`}>
+                    {variation.src ? (
+                        <img src={variation.src} alt={`${brandSettings.logo.alt} - ${variation.name}`} />
+                    ) : (
+                        <div class="placeholder-text">[Logo: {variation.name}]</div>
+                    )}
+                </div>
+                <div class="logo-info">
+                    <h4>{variation.name}</h4>
+                    <p>{variation.description}</p>
+                </div>
+            </div>
+        ))}
+    </div>
+</section>
+
+<style>
+    .logo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    .logo-card {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--container-bg);
+    }
+    .logo-preview {
+        padding: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        border-bottom: 1px solid var(--border-light);
+    }
+    .logo-preview img {
+        max-width: 100%;
+        height: auto;
+        max-height: 100px;
+    }
+    .logo-info {
+        padding: 1rem;
+    }
+    .logo-info h4 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1rem;
+        color: var(--heading-color);
+    }
+    .logo-info p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--muted-text);
+    }
+    .placeholder-text {
+        opacity: 0.5;
+        font-style: italic;
+        text-align: center;
+    }
+</style>

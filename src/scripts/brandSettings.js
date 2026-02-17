@@ -1,12 +1,42 @@
 export const brandSettings = {
     logo: {
         src: "", // Add logo URL here (e.g., "/assets/logo.png")
-        alt: "[Brand Name] Logo"
+        alt: "[Brand Name] Logo",
+        variations: [
+            { 
+                name: "Primary - Light Background", 
+                src: "", // Add image path
+                bg: "#ffffff", 
+                darkText: true,
+                description: "Use this version on white or light backgrounds."
+            },
+            { 
+                name: "Primary - Dark Background", 
+                src: "", // Add image path
+                bg: "#333333", 
+                darkText: false,
+                description: "Use this version on dark or brand-colored backgrounds."
+            },
+            { 
+                name: "Monochrome - Black", 
+                src: "", // Add image path
+                bg: "#ffffff", 
+                darkText: true,
+                description: "For black and white print or single-color applications."
+            },
+            { 
+                name: "Monochrome - White", 
+                src: "", // Add image path
+                bg: "#000000", 
+                darkText: false,
+                description: "For dark backgrounds where color is not permitted."
+            }
+        ]
     },
     favicon: "/favicon.svg", // Add favicon URL here
     typography: {
-        primaryFont: "[Insert Sans-Serif Font Name]",
-        secondaryFont: "[Insert Font Name]",
+        primaryFont: "Helvetica Neue",
+        secondaryFont: "Verdana",
         baseSize: "16px",
         lineHeight: "1.5",
         paragraphSpacing: "2"

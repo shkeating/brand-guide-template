@@ -20,14 +20,14 @@ const paletteVars = brandSettings.palette.map(color => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <style is:global>
+    <style is:global set:html={`
         :root {
-            {paletteVars}
-            --font-primary: {brandSettings.typography.primaryFont};
-            --font-secondary: {brandSettings.typography.secondaryFont};
-            --line-height-base: {brandSettings.typography.lineHeight};
+            ${paletteVars}
+            --font-primary: ${brandSettings.typography.primaryFont};
+            --font-secondary: ${brandSettings.typography.secondaryFont};
+            --line-height-base: ${brandSettings.typography.lineHeight};
         }
-    </style>
+    `} />
 </head>
 <body>
     <slot />

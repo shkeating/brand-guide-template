@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Logo from '../components/sections/Logo.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Strategy from '../components/sections/Strategy.astro';
 import Typography from '../components/sections/Typography.astro';
@@ -19,25 +20,31 @@ import Implementation from '../components/sections/Implementation.astro';
 
         <main id="main-content">
 
-            <!-- Section 1: Strategy -->
+            <!-- Section 1: Logo -->
+            <Logo />
+
+            <!-- Section 2: Strategy -->
             <Strategy />
 
-            <!-- Section 2: Typography -->
-            <Typography />
-
-            <!-- Section 3: Color & Contrast -->
-            <Color />
-
-            <!-- Section 4: Imagery -->
-            <Imagery />
-
-            <!-- Section 5: Digital UX -->
-            <DigitalUX />
-
-            <!-- Section 6: Voice & Tone -->
+            <!-- Section 3: Voice & Tone -->
             <Voice />
 
-            <!-- Section 7: Documentation -->
+            <!-- Section 4: Color & Contrast -->
+            <Color />
+
+            <!-- Section 5: Typography -->
+            <Typography />
+
+            <!-- After this point add a section or two that apply to our brand you can use imagery or UX if you'd like, 
+             but your brand may need other things instead or in addition such as video, social media, etc. -->
+
+            <!-- Optional Section: Imagery -->
+            <Imagery />
+
+            <!-- Optional Section: Digital UX -->
+            <DigitalUX />
+            
+            <!-- Optional Section: Documentation -->
             <Implementation />
 
         </main>

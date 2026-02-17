@@ -30,8 +30,29 @@
 }
 
 /* Dark Mode Overrides */
+[data-theme="dark"] {
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --wireframe-border: #666666;
+        --instruction-bg: #423602;
+        --instruction-border: #6e5d14;
+        --instruction-text: #ffeeba;
+        --container-bg: #1e1e1e;
+        --sidebar-bg: #1e1e1e;
+        --border-color: #444444;
+        --border-light: #333333;
+        --heading-color: #ffffff;
+        --muted-text: #aaaaaa;
+        --placeholder-bg: #2d2d2d;
+        --table-header-bg: #262626;
+        --link-color: #4dabf7;
+        --link-hover-bg: #1a2733;
+        --link-active-bg: #1c3146;
+        --link-active-color: #74c0fc;
+}
+
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --bg-color: #121212;
         --text-color: #e0e0e0;
         --wireframe-border: #666666;
@@ -486,3 +507,27 @@ th {
 .swap-btn:hover {
     background-color: var(--table-header-bg);
 }
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: fit-content;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.theme-toggle:hover {
+    background-color: var(--table-header-bg);
+}
+
+[data-theme="dark"] .theme-icon-dark { display: none; }
+[data-theme="light"] .theme-icon-light { display: none; }
