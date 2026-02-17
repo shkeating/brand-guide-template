@@ -111,7 +111,6 @@ html {
 }
 
 header {
-    text-align: center;
     margin-bottom: 50px;
     padding-bottom: 20px;
     border-bottom: 2px solid var(--border-light);
@@ -255,7 +254,6 @@ th {
     border-bottom: 2px solid var(--border-light);
     padding-bottom: 20px;
     margin-bottom: 20px;
-    text-align: center;
     display: block;
 }
 .brand-title {
@@ -531,3 +529,88 @@ th {
 
 [data-theme="dark"] .theme-icon-dark { display: none; }
 [data-theme="light"] .theme-icon-light { display: none; }
+
+/* Print Styles - if someone prints the webpage these get applied */
+@media print {
+    /* Force Light Mode & Reset Colors */
+    :root, [data-theme="dark"] {
+        --bg-color: #ffffff !important;
+        --text-color: #000000 !important;
+        --container-bg: transparent !important;
+        --sidebar-bg: transparent !important;
+        --border-color: #cccccc !important;
+        --heading-color: #000000 !important;
+        --link-color: #000000 !important;
+        --muted-text: #333333 !important;
+        --wireframe-border: #000000 !important;
+    }
+
+    /* Reset Layout */
+    body {
+        display: block !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Sidebar - Move Brand to Top */
+    .sidebar {
+        position: static !important;
+        width: 100% !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 0 2rem 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .sidebar-header {
+        border-bottom: 2px solid #000000 !important;
+        padding-bottom: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .brand {
+        text-align: left !important;
+    }
+    .logo-placeholder {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Hide Navigation & Interactive Elements */
+    .toc-nav,
+    .mobile-toc-toggle,
+    .theme-toggle,
+    .contrast-calculator button,
+    .copy-btn,
+    .instruction-note {
+        display: none !important;
+    }
+
+    /* Main Content Container */
+    .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Ensure Links are Printable */
+    a {
+        text-decoration: underline !important;
+        color: #000000 !important;
+    }
+
+    /* Preserve Brand Assets */
+    .swatch-color,
+    .logo-preview {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
