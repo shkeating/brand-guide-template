@@ -1,5 +1,6 @@
 ---
 import InstructionNote from '../InstructionNote.astro';
+import ColorSwatch from '../ColorSwatch.astro';
 import { brandSettings } from '../../scripts/brandSettings.js';
 ---
 <section id="color">
@@ -8,6 +9,9 @@ import { brandSettings } from '../../scripts/brandSettings.js';
                 <InstructionNote>
                     Define your brand's primary and extended color palettes. Research and document the required WCAG contrast ratios for text and non-text UI elements, then verify your palette meets these standards.
                 </InstructionNote>
+
+                <h3>Brand Palette</h3>
+                <ColorSwatch />
 
                 <h3>Color Usage Policy</h3>
                 <p><strong>Use of Color:</strong> [Define your brand's policy on relying solely on color to convey meaning, state, or information (e.g., in error states or links). Assume your user is marketing and design team membrs who might not have any prior accessibility knowledge.]</p>

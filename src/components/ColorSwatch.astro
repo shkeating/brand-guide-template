@@ -1,0 +1,95 @@
+---
+import { brandSettings } from '../scripts/brandSettings.js';
+---
+
+<div class="palette-grid">
+    {brandSettings.palette.map((color) => (
+        <div class="swatch-card">
+            <div class="swatch-color" style={`background-color: ${color.hex};`}></div>
+            <div class="swatch-info">
+                <span class="swatch-name">{color.name}</span>
+                <span class="swatch-hex">{color.hex}</span>
+                <button class="copy-btn" data-hex={color.hex} aria-label={`Copy ${color.name} hex code`}>
+                    Copy
+                </button>
+            </div>
+        </div>
+    ))}
+</div>
+
+<style>
+    .palette-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .swatch-card {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        background: var(--container-bg);
+    }
+
+    .swatch-color {
+        height: 100px;
+        width: 100%;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .swatch-info {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .swatch-name {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+        color: var(--heading-color);
+    }
+
+    .swatch-hex {
+        display: block;
+        font-family: monospace;
+        color: var(--muted-text);
+        font-size: 0.9em;
+        text-transform: uppercase;
+    }
+
+    .copy-btn {
+        margin-top: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8rem;
+        background-color: transparent;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        cursor: pointer;
+        color: var(--text-color);
+        transition: all 0.2s;
+        align-self: start;
+    }
+
+    .copy-btn:hover {
+        background-color: var(--table-header-bg);
+        border-color: var(--text-color);
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.copy-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const hex = button.getAttribute('data-hex');
+            navigator.clipboard.writeText(hex).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            });
+        });
+    });
+</script>
