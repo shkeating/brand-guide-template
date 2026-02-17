@@ -56,6 +56,17 @@ npm run build
 
 This will generate a `dist/` directory with your static site.
 
+## Deployment
+
+This template includes a pre-configured GitHub Actions workflow (`.github/workflows/deploy.yml`) to automatically deploy your site to GitHub Pages.
+
+### Setting up GitHub Pages
+
+1. Go to your repository's **Settings** tab.
+2. Click on **Pages** in the left sidebar.
+3. Under **Build and deployment** > **Source**, select **GitHub Actions** from the dropdown menu.
+4. The site will automatically deploy whenever you push changes to the `main` branch.
+
 ## Accessibility Features
 - **Built in Interactive Contrast Calculator**: Dynamically calculates ratios based on your palette settings.
 - **Keyboard Navigation**: Includes skip links and focus management for in-page navigation.
