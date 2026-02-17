@@ -56,7 +56,7 @@ npm run build
 
 This will generate a `dist/` directory with your static site.
 
-## ♿ Accessibility Features
+## Accessibility Features
 - **Built in Interactive Contrast Calculator**: Dynamically calculates ratios based on your palette settings.
 - **Keyboard Navigation**: Includes skip links and focus management for in-page navigation.
 - **Semantic Structure**: Built with proper landmarks and heading hierarchy.
